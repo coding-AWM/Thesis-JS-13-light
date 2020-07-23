@@ -16,3 +16,8 @@ popupCallToggle();
 import popupCheckToggle from './modules/popupCheckToggle';
 
 popupCheckToggle();
+
+// поле на кнопку БОЛЬШЕ
+import moreSentens from './modules/moreSentens';
+
+moreSentens();
