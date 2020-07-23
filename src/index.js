@@ -4,7 +4,7 @@
 // проверка на модульность, в коце удалить
 import helo from './modules/inity';
 
-helo('sf');
+helo('проверка на моульность');
 
 // попапка  popupCallToggle
 import popupCallToggle from './modules/popupCallToggle';
