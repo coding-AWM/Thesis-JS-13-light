@@ -10,3 +10,9 @@ helo('проверка на моульность');
 import popupCallToggle from './modules/popupCallToggle';
 
 popupCallToggle();
+
+//попапка popupCheckToggle
+
+import popupCheckToggle from './modules/popupCheckToggle';
+
+popupCheckToggle();
