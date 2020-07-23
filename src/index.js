@@ -21,3 +21,9 @@ popupCheckToggle();
 import moreSentens from './modules/moreSentens';
 
 moreSentens();
+
+// попапка popupDiscountToggle
+
+import popupDiscountToggle from './modules/popupDiscountToggle';
+
+popupDiscountToggle();
