@@ -84,6 +84,9 @@ const sendForms = (tag, phoneNum, userName) => {
           throw new Error ('status network not 200!')
         }
         statusMessage.textContent = successMessage;
+        setTimeout(() => {
+          statusMessage.textContent = '';
+        }, 5000)
       })
       .catch(error => {
         console.log('error: ', error);
