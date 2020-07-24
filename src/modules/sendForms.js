@@ -69,6 +69,7 @@ const sendForms = (tag, phoneNum, userName) => {
     form.addEventListener('submit', event => {
       event.preventDefault();
       form.appendChild(statusMessage);
+      statusMessage.textContent = loadMessage;
 
       const formData = new FormData(form);
       const body = {};
