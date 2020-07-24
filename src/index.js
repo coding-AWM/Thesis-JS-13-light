@@ -27,3 +27,9 @@ moreSentens();
 import popupDiscountToggle from './modules/popupDiscountToggle';
 
 popupDiscountToggle();
+
+// две формы 
+
+import sendForms from './modules/sendForms';
+sendForms('.main-form', '.phone-user');
+sendForms('.capture-form', '.phone-user', '.name_2');
