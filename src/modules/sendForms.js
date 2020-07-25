@@ -8,6 +8,7 @@ const sendForms = (tag, phoneNum, userName) => {
   const sendForm = () => {
     form.addEventListener('input', event => {
       const target = event.target;
+      console.log('target: ', target);
       
       const noShowNumber = function () {
         this.value = this.value.replace(/[\da-zA-Z]/g, '');
@@ -67,6 +68,7 @@ const sendForms = (tag, phoneNum, userName) => {
     });
 
     form.addEventListener('submit', event => {
+      console.log('клик');
       event.preventDefault();
       form.appendChild(statusMessage);
       statusMessage.textContent = loadMessage;
@@ -97,7 +99,6 @@ const sendForms = (tag, phoneNum, userName) => {
       inputs.forEach(val => {
 				val.value = '';
       });
-      console.log(inputs);
       
     })
   };

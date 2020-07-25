@@ -7,7 +7,6 @@ const moreSentens = () => {
 		console.log(sentensBlock);
 
 		sentensBlock.forEach(elem => {
-			console.log('elem: ', elem);
 			if (elem.classList.contains('hidden')) {
 				elem.classList.remove('hidden');
 			}

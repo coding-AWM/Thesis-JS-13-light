@@ -1,11 +1,6 @@
 // eslint-disable-next-line strict
 'use strict';
 
-// проверка на модульность, в коце удалить
-import helo from './modules/inity';
-
-helo('проверка на моульность');
-
 // попапка  popupCallToggle
 import popupCallToggle from './modules/popupCallToggle';
 
@@ -28,8 +23,22 @@ import popupDiscountToggle from './modules/popupDiscountToggle';
 
 popupDiscountToggle();
 
+//попап popupConsultationToggle
+
+import popupConsultationToggle from './modules/popupConsultationToggle';
+popupConsultationToggle();
+
+//аккордеон
+
+import accordeon from './modules/accordeon';
+accordeon();
+
 // две формы 
 
 import sendForms from './modules/sendForms';
+
 sendForms('.main-form', '.phone-user');
 sendForms('.capture-form', '.phone-user', '.name_2');
+sendForms('.capture-form-popup', '.phone-user', '.name_13');
+
+
