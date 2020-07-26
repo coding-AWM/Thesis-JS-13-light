@@ -9,6 +9,8 @@ const calculator = () => {
 	let switchPrice = 10000;
 	let bottomPrice = 1000;
 
+	calcResult.value = switchPrice + bottomPrice;
+
 	const showNumber = function () {
 		this.value = this.value.replace(/\D\.?\D/g, '');
 		console.log('this.value: ', this.value);
@@ -36,7 +38,8 @@ const calculator = () => {
 		let amountFirstValue = +formControl[1].value.replace(/\D/g, '');
 		let diameterSecondValue = +formControl[2].value.replace(/\D\.?\D/g, '');
 		let amountSecondValue = +formControl[3].value.replace(/\D/g, '');
-		// let bottomPrice = 0;		
+		// let bottomPrice = 0;	
+		
 
 		if (diameterFirstValue === 2) {
 			diameterCoeficient *= 1.2
