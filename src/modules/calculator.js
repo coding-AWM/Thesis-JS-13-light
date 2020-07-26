@@ -5,8 +5,7 @@ const calculator = () => {
 	const switcherOfRings2 = document.getElementById('myonoffswitch-two');
 	const formControl = document.querySelectorAll('.form-control');
 	const secondWell = document.querySelectorAll('.second-well');
-	const constructBtn = document.querySelectorAll('.construct-btn');
-	console.log('constructBtn: ', constructBtn);
+	
 
 	let switchPrice = 10000;
 	let bottomPrice = 1000;
