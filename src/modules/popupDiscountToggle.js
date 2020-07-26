@@ -2,7 +2,7 @@ const popupDiscountToggle = () => {
 	const popupDiscount = document.querySelector('.popup-discount');
 	document.addEventListener('click', () => {
 		const target  = event.target;
-		if (target.matches('.discount-btn ')) {
+		if (target.matches('.discount-btn ') || target.matches('.construct-btn')) {
 			popupDiscount.style.display = 'block';
 		}
 	});

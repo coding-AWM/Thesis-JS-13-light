@@ -31,7 +31,14 @@ popupConsultationToggle();
 //аккордеон
 
 import accordeon from './modules/accordeon';
-accordeon();
+accordeon('accordion-two');
+accordeon('accordion');
+
+//калькулятор
+
+import calculator from './modules/calculator';
+calculator();
+
 
 // две формы 
 
@@ -40,5 +47,6 @@ import sendForms from './modules/sendForms';
 sendForms('.main-form', '.phone-user');
 sendForms('.capture-form', '.phone-user', '.name_2');
 sendForms('.capture-form-popup', '.phone-user', '.name_13');
+sendForms('.capture-form-popup', '.phone-user', '.name_11');
 
 

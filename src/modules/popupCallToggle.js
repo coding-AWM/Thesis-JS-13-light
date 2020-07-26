@@ -5,7 +5,7 @@ const popupCallToggle = () => {
 
 		const target = event.target;
 
-		if (target.matches('.call-btn')) {
+		if (target.matches('.header-btn')) {
 			popupCall.style.display = 'block';
 		}
 

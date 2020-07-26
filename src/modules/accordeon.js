@@ -1,9 +1,7 @@
-const accordeon = () => {
-	const accordeonBlock = document.getElementById('accordion-two');
+const accordeon = (accordeonNumber) => {
+	const accordeonBlock = document.getElementById(accordeonNumber);
 	const accordeonHeader = accordeonBlock.querySelectorAll('.panel-default');
 	const accordeonContent = accordeonBlock.querySelectorAll('.panel-collapse');
-
-	accordeonContent[1].display = 'block';
 
 	const toggleAccordeonContent = index => {
 		for (let i = 0; i < accordeonContent.length; i++) {
@@ -22,7 +20,6 @@ const accordeon = () => {
 	accordeonBlock.addEventListener('click', event => {
 		let target = event.target;
 		target = target.closest('.panel-default'); // если не нашел, то идёт выше и ищет у родителя.
-		console.log('target: ', target);
 		
 		if (target) {
 			accordeonHeader.forEach((item, i) => {

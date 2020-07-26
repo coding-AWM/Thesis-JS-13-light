@@ -43,7 +43,7 @@
                 <div class="contacts">
                     <p>+7 <img src="" alt="" style="width: 0px">(800) <img src="" alt="" style="width: 0px">555-<img
                             src="" alt="" style="width: 0px">64-47</p>
-                    <a class="call-btn" href="#">Перезвоните мне</a>
+                    <a class="call-btn header-btn" href="#">Перезвоните мне</a>
                 </div>
             </div>
         </div>
@@ -128,7 +128,7 @@
         <div class="row">
             <h2>Онлайн конструктор септика</h2>
             <div class="col-lg-6 col-md-6 col-sm-6">
-                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                <div class="panel-group" id="accordion" class="accordion" role="tablist" aria-multiselectable="true">
 
                     <div class="panel panel-default panel-one wow fadeInLeft">
                         <div class="panel-heading" role="tab" id="headingOne">
@@ -189,15 +189,15 @@
                                     </select>
                                 </div>
 
-                                <div class="title-text">второй колодец (дренажный)</div>
-                                <div class="select-box">
+                                <div class="title-text second-well">второй колодец (дренажный)</div>
+                                <div class="select-box second-well">
                                     <p><strong>Диаметр</strong></p>
                                     <select class="form-control expand">
                                         <option>1.4 метра</option>
                                         <option>2 метра</option>
                                     </select>
                                 </div>
-                                <div class="select-box">
+                                <div class="select-box second-well">
                                     <p><strong>Количество колец</strong></p>
                                     <select class="form-control expand">
                                         <option>1 штука</option>
@@ -263,8 +263,8 @@
 
             <div class="col-lg-6 col-md-6 col-sm-6 wow fadeInRight">
                 <img class="tank-img" src="img/constructor/septic-tank.png" alt="tank">
-                <input id="calc-result" type="text" placeholder="примерная стоимость" disabled>
-            </div>
+                <input id="calc-result"  type="text" placeholder="примерная стоимость" disabled>
+            </input>
 
         </div>
     </div>
@@ -471,7 +471,7 @@
                 <div class="contacts">
                     <p>+7 <img src="" alt="" style="width: 0px">(800) <img src="" alt="" style="width: 0px">555-<img
                             src="" alt="" style="width: 0px">64-47</p>
-                    <a class="call-btn" href="#">Перезвоните мне</a>
+                    <a class="call-btn header-btn" href="#">Перезвоните мне</a>
                 </div>
             </div>
         </div>
@@ -505,10 +505,10 @@
     <div class="popup-dialog">
         <div class="popup-content">
             <!-- <div class="popup-form"> -->
-            <form class="capture-form text-center">
+            <form class="capture-form capture-form-popup text-center">
                 <span class="circle"><button class="popup-close">&times;</button></span>
                 <label for="name_11">Как к вам обращаться</label>
-                <input type="text" id="name_11" name="user_name" placeholder="Ваше имя" required>
+                <input type="text" id="name_11" class="name_11" name="user_name" placeholder="Ваше имя" required>
                 <label for="phone_11">Ваш телефон для получения скидки</label>
                 <input class="phone-user" type="text" id="phone_11" name="user_phone" placeholder="+7(___)___-__-__"
                        required>
