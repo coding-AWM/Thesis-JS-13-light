@@ -39,9 +39,9 @@ accordeon('accordion');
 import calculator from './modules/calculator';
 calculator();
 
-//калькулятор следующий шаг
-import calculatorNextStep from './modules/calculatorNextStep';
-calculatorNextStep('accordion');
+// //калькулятор следующий шаг
+// import calculatorNextStep from './modules/calculatorNextStep';
+// calculatorNextStep('accordion');
 
 
 // две формы 
