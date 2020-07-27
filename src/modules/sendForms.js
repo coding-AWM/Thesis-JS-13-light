@@ -1,4 +1,4 @@
-const sendForms = (tag, phoneNum, userName) => {
+const sendForms = (tag, phoneNum, userName, sendButton) => {
   const errorMessage = 'Что то не так пошло...';
   const loadMessage = 'Загрузка...';
   const successMessage = 'Спасибо! Мы скоро с вами свяжемся!';
@@ -67,8 +67,8 @@ const sendForms = (tag, phoneNum, userName) => {
     });
 
     form.addEventListener('submit', event => {
-      console.log('клик');
-      // event.preventDefault();
+      // if (event.target.closest(sendButton)) {
+        event.preventDefault();
       form.appendChild(statusMessage);
       statusMessage.textContent = loadMessage;
 
@@ -97,7 +97,9 @@ const sendForms = (tag, phoneNum, userName) => {
       const inputs = form.querySelectorAll('input');
       inputs.forEach(val => {
 				val.value = '';
-      });
+      });        
+      // }
+      
       
     })
   };

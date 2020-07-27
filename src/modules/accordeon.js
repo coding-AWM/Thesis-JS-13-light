@@ -6,12 +6,8 @@ const accordeon = (accordeonNumber) => {
 	const toggleAccordeonContent = index => {
 		for (let i = 0; i < accordeonContent.length; i++) {
 			if (index === i) {
-				// accordeonHeader[i].classList.add('active');
-				// accordeonContent[i].classList.remove('d-none');
 				accordeonContent[i].style.display = 'block';
 			} else {
-				// accordeonHeader[i].classList.remove('active');
-				// accordeonContent[i].classList.add('d-none');
 				accordeonContent[i].style.display = 'none';
 			}
 		}
