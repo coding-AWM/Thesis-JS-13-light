@@ -68,53 +68,56 @@ const sendFormsModals = (tag, phoneNum, userName, sendButton, addedFormOne, unpu
       }
     });
 
+    const bodyAddedForms = {};
 
     formAddedOne.addEventListener('submit', event => {
       event.preventDefault();
-      const formDataTwo = new FormData(formAddedOne);
-      const bodyAddedForms = {};
-      
+      const formDataTwo = new FormData(formAddedOne);      
 
       formDataTwo.forEach((val, key) => {
         bodyAddedForms[key] = val;
       });
 
-      form.addEventListener('click', event => {
-        if (event.target.closest(sendButton)) {
-          event.preventDefault();
-  
-          form.appendChild(statusMessage);
-          statusMessage.textContent = loadMessage;
-  
-          const formData = new FormData(form);
-          const body = {};
+    })
+    form.addEventListener('click', event => {
+      if (event.target.closest(sendButton)) {
+        event.preventDefault();
+
+        form.appendChild(statusMessage);
+        statusMessage.textContent = loadMessage;
+
+        const formData = new FormData(form);
+        const body = {};        
+
+        if (Object.keys(bodyAddedForms).length == 0) {
+        } else {
           Object.assign(body, bodyAddedForms)
-  
-          formData.forEach((val, key) => {
-            body[key] = val;
+        }
+
+        formData.forEach((val, key) => {
+          body[key] = val;
+        });
+
+        postData(body)
+          .then(response => {
+            if (response.status !== 200) {
+              throw new Error('status network not 200!')
+            }
+            statusMessage.textContent = successMessage;
+            setTimeout(() => {
+              statusMessage.textContent = '';
+            }, 5000)
+          })
+          .catch(error => {
+            console.log('error: ', error);
+            statusMessage.textContent = errorMessage;
           });
-  
-          postData(body)
-            .then(response => {
-              if (response.status !== 200) {
-                throw new Error('status network not 200!')
-              }
-              statusMessage.textContent = successMessage;
-              setTimeout(() => {
-                statusMessage.textContent = '';
-              }, 5000)
-            })
-            .catch(error => {
-              console.log('error: ', error);
-              statusMessage.textContent = errorMessage;
-            });
-  
-          const inputs = form.querySelectorAll('input');
-          inputs.forEach(val => {
-            val.value = '';
-          });
-        }  
-      })
+
+        const inputs = form.querySelectorAll('input');
+        inputs.forEach(val => {
+          val.value = '';
+        });
+      }
     })
   };
   sendFormModals();
