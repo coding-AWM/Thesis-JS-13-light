@@ -3,7 +3,7 @@ const sendFormsModals = (tag, phoneNum, userName, sendButton, addedFormOne, unpu
   const loadMessage = 'Загрузка...';
   const successMessage = 'Спасибо! Мы скоро с вами свяжемся!';
   const form1 = document.querySelector('.input1');
-  const formAddedOne = document.querySelector(addedFormOne)
+  const formAddedOne = document.querySelector('.director-form');
   const form = document.querySelector(tag);
   const statusMessage = document.createElement('div');
 
@@ -69,7 +69,7 @@ const sendFormsModals = (tag, phoneNum, userName, sendButton, addedFormOne, unpu
     });
 
 
-    formAddedOne.addEventListener('click', event => {
+    formAddedOne.addEventListener('submit', event => {
       event.preventDefault();
       const formDataTwo = new FormData(formAddedOne);
       const bodyAddedForms = {};
@@ -88,7 +88,7 @@ const sendFormsModals = (tag, phoneNum, userName, sendButton, addedFormOne, unpu
   
           const formData = new FormData(form);
           const body = {};
-          Object.assign(body, bodyAddedForms);
+          Object.assign(body, bodyAddedForms)
   
           formData.forEach((val, key) => {
             body[key] = val;
@@ -113,57 +113,9 @@ const sendFormsModals = (tag, phoneNum, userName, sendButton, addedFormOne, unpu
           inputs.forEach(val => {
             val.value = '';
           });
-        }
-  
-  
+        }  
       })
     })
-
-    // if (userName && phoneNum) {
-    // console.log('phoneNum: ', phoneNum.value);
-
-
-    // form.addEventListener('click', event => {
-    //   if (event.target.closest(sendButton)) {
-    //     event.preventDefault();
-
-    //     form.appendChild(statusMessage);
-    //     statusMessage.textContent = loadMessage;
-
-    //     const formData = new FormData(form);
-    //     const body = {};
-
-    //     formData.forEach((val, key) => {
-    //       body[key] = val;
-    //     });
-
-    //     postData(body)
-    //       .then(response => {
-    //         if (response.status !== 200) {
-    //           throw new Error('status network not 200!')
-    //         }
-    //         statusMessage.textContent = successMessage;
-    //         setTimeout(() => {
-    //           statusMessage.textContent = '';
-    //         }, 5000)
-    //       })
-    //       .catch(error => {
-    //         console.log('error: ', error);
-    //         statusMessage.textContent = errorMessage;
-    //       });
-
-    //     const inputs = form.querySelectorAll('input');
-    //     inputs.forEach(val => {
-    //       val.value = '';
-    //     });
-    //   }
-
-
-    // })
-
-    // }
-
-
   };
   sendFormModals();
 
