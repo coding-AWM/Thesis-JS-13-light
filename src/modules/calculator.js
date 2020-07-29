@@ -98,10 +98,6 @@ const calculator = () => {
 			finalPrice = (switchPrice + bottomPrice) * diameterCoeficient * amountFirstCoeficient * diameterCoeficient2 * amountSecondCoeficient;
 		}
 		calcResult.value = finalPrice;
-
-		// let res = basePrice * formControlValue;
-		// console.log('formControlValue: ', formControlValue);
-		// console.log('res: ', res);
 	}
 
 }

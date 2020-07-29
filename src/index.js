@@ -47,9 +47,13 @@ sendForms('.capture-form', '.phone-user', '.name_2');
 import sendFormsModals from './modules/sendFormsModals';
 
 sendFormsModals('.capture-form-consultation', '.phone-user', '.name_13', '.capture-form-btn', '.director-form');
-sendFormsModals('.capture-form-discount', '.phone-user', '.name_11', '.capture-form-btn');
 sendFormsModals('.capture-form-check', '.phone-user', '.name_12', '.discount-btn');
 sendFormsModals('.first-form', '.phone-user', '.name_1', '.capture-form-btn');
+
+
+//форма калькулятора
+import sendFormsCalculator from './modules/sendFormsCalculator';
+sendFormsCalculator('.capture-form-discount', '.phone-user', '.name_11', '.capture-form-btn');
 
 
 
