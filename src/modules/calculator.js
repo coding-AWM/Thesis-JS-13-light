@@ -97,7 +97,7 @@ const calculator = () => {
 		if (switcherOfRings || formControlValue) {
 			finalPrice = (switchPrice + bottomPrice) * diameterCoeficient * amountFirstCoeficient * diameterCoeficient2 * amountSecondCoeficient;
 		}
-		calcResult.value = finalPrice;
+		calcResult.value = Math.floor(finalPrice);
 	}
 
 }
