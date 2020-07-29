@@ -46,9 +46,9 @@ sendForms('.capture-form', '.phone-user', '.name_2');
 
 import sendFormsModals from './modules/sendFormsModals';
 
-sendFormsModals('.capture-form-consultation', '.phone-user', '.name_13', '.capture-form-btn', '.director-form');
-sendFormsModals('.capture-form-check', '.phone-user', '.name_12', '.discount-btn');
-sendFormsModals('.first-form', '.phone-user', '.name_1', '.capture-form-btn');
+sendFormsModals('.capture-form-consultation', '.phone-user', '.name_13', '.capture-form-btn', '.popup-consultation');
+sendFormsModals('.capture-form-check', '.phone-user', '.name_12', '.capture-form-btn', '.popup-check');
+sendFormsModals('.first-form', '.phone-user', '.name_1', '.capture-form-btn', '.popup-call');
 
 
 //форма калькулятора

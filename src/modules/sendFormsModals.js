@@ -6,6 +6,7 @@ const sendFormsModals = (tag, phoneNum, userName, sendButton, popup) => {
   const formAddedOne = document.querySelector('.director-form');
   const form = document.querySelector(tag);
   const statusMessage = document.createElement('div');
+  const modal = document.querySelector(popup);
 
   const sendFormModals = () => {
     form.addEventListener('input', event => {
@@ -83,7 +84,7 @@ const sendFormsModals = (tag, phoneNum, userName, sendButton, popup) => {
       if (event.target.closest(sendButton)) {
         event.preventDefault();
 
-        setTimeout(() => {popup.style.display = 'none'}, 2000);
+        setTimeout(() => {modal.style.display = 'none'}, 2000);
 
         form.appendChild(statusMessage);
         statusMessage.textContent = loadMessage;
