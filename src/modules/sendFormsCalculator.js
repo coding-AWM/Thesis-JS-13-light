@@ -2,8 +2,6 @@ const sendFormsCalculator = (tag, phoneNum, userName, sendButton) => {
   const errorMessage = 'Что то не так пошло...';
   const loadMessage = 'Загрузка...';
   const successMessage = 'Спасибо! Мы скоро с вами свяжемся!';
-  // const form1 = document.querySelector('.input1');
-  // const formAddedOne = document.querySelector('.director-form');
   const form = document.querySelector(tag);
   const statusMessage = document.createElement('div');
 
@@ -85,9 +83,8 @@ const sendFormsCalculator = (tag, phoneNum, userName, sendButton) => {
       let amountSecondValue = +formControl[3].value.replace(/\D/g, '');
 
       if (event.target.matches('.discount-btn')) {
-
-        console.log(calcResult.value);
         bodyAddedForms['Итоговая сумма'] = calcResult.value + ' руб.';
+        
         if (distanceToHome.value === '') {
           bodyAddedForms['Расстояние до дома'] = distanceToHome.value + ' вплотную';
         } else {
