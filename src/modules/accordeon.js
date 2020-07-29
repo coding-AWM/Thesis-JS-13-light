@@ -4,7 +4,6 @@ const accordeon = (accordeonNumber) => {
 	const accordeonContent = accordeonBlock.querySelectorAll('.panel-collapse');
 
 	const toggleAccordeonContent = index => {
-		event.preventDefault();
 		for (let i = 0; i < accordeonContent.length; i++) {
 			if (index === i) {
 				accordeonContent[i].style.display = 'block';
