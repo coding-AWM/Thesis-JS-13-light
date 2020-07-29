@@ -1,13 +1,20 @@
-const sendFormsCalculator = (tag, phoneNum, userName, sendButton, addedFormOne, unputTwo, input3) => {
+const sendFormsCalculator = (tag, phoneNum, userName, sendButton) => {
   const errorMessage = 'Что то не так пошло...';
   const loadMessage = 'Загрузка...';
   const successMessage = 'Спасибо! Мы скоро с вами свяжемся!';
-  const form1 = document.querySelector('.input1');
-  const formAddedOne = document.querySelector('.director-form');
+  // const form1 = document.querySelector('.input1');
+  // const formAddedOne = document.querySelector('.director-form');
   const form = document.querySelector(tag);
   const statusMessage = document.createElement('div');
 
-  const sendFormModals = () => {
+  const popupDiscount = document.querySelector('.popup-discount');
+  const switcherOfRings = document.getElementById('myonoffswitch');
+  const formControl = document.querySelectorAll('.form-control');
+  const switcherOfRings2 = document.getElementById('myonoffswitch-two');
+  const distanceToHome = document.querySelector('.distance-to-home');
+  const calcResult = document.getElementById('calc-result');
+
+  const sendFormsCalculator = () => {
     form.addEventListener('input', event => {
       const target = event.target;
 
@@ -70,27 +77,82 @@ const sendFormsCalculator = (tag, phoneNum, userName, sendButton, addedFormOne, 
 
     const bodyAddedForms = {};
 
-    formAddedOne.addEventListener('submit', event => {
-      event.preventDefault();
-      const formDataTwo = new FormData(formAddedOne);      
+    document.addEventListener('click', event => {
 
-      formDataTwo.forEach((val, key) => {
-        bodyAddedForms[key] = val;
-      });
+      let diameterFirstValue = +formControl[0].value.replace(/\D\.?\D/g, '');
+      let amountFirstValue = +formControl[1].value.replace(/\D/g, '');
+      let diameterSecondValue = +formControl[2].value.replace(/\D\.?\D/g, '');
+      let amountSecondValue = +formControl[3].value.replace(/\D/g, '');
+
+      if (event.target.matches('.discount-btn')) {
+
+        console.log(calcResult.value);
+        bodyAddedForms['Итоговая сумма'] = calcResult.value + ' руб.';
+        if (distanceToHome.value === '') {
+          bodyAddedForms['Расстояние до дома'] = distanceToHome.value + ' вплотную';
+        } else {
+          bodyAddedForms['Расстояние до дома'] = distanceToHome.value + ' метров';
+        }
+
+        if (diameterFirstValue === 2) {
+          bodyAddedForms['Диаметр первого колодца'] = '2 метра';
+        } else {
+          bodyAddedForms['Диаметр первого колодца'] = '1,4 метра';
+        }
+
+        if (amountFirstValue === 3) {
+          bodyAddedForms['Количество колец первого колодца'] = '3 кольца';
+        } else if (amountFirstValue === 2) {
+          bodyAddedForms['Количество колец первого колодца'] = '2 кольца';
+        } else {
+          bodyAddedForms['Количество колец первого колодца'] = '1 кольцо';
+        }
+
+        if (switcherOfRings.checked) {
+          bodyAddedForms['Тип колодца'] = 'Однокамерный';
+          if (switcherOfRings2.checked) {
+            bodyAddedForms['Днище первого колодца'] = 'Есть';
+          } else {
+            bodyAddedForms['Днище первого колодца'] = 'Нет';
+          }
+        } else {
+          bodyAddedForms['Тип колодца'] = 'Двухкамерный';
+          if (switcherOfRings2.checked) {
+            bodyAddedForms['Днище у колодцев'] = 'Есть';
+          } else {
+            bodyAddedForms['Днище у колодцев '] = 'Нет';
+          }
+
+          if (diameterSecondValue === 2) {
+            bodyAddedForms['Диаметр второго колодца'] = '2 метра';
+          } else {
+            bodyAddedForms['Диаметр второго колодца'] = '1,4 метра';
+          }
+
+          if (amountSecondValue === 3) {
+            bodyAddedForms['Количество колец второго колодца'] = '3 кольца';
+          } else if (amountSecondValue === 2) {
+            bodyAddedForms['Количество колец второго колодца'] = '2 кольца';
+          } else {
+            bodyAddedForms['Количество колец второго колодца'] = '1 кольца';
+          }
+        }
+      }
 
     })
     form.addEventListener('click', event => {
       if (event.target.closest(sendButton)) {
         event.preventDefault();
+        
+        setTimeout(() => {popupDiscount.style.display = 'none'}, 2000);
 
         form.appendChild(statusMessage);
         statusMessage.textContent = loadMessage;
 
         const formData = new FormData(form);
-        const body = {};        
+        const body = {};
 
-        if (Object.keys(bodyAddedForms).length == 0) {
-        } else {
+        if (Object.keys(bodyAddedForms).length == 0) {} else {
           Object.assign(body, bodyAddedForms)
         }
 

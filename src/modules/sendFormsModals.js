@@ -1,4 +1,4 @@
-const sendFormsModals = (tag, phoneNum, userName, sendButton, addedFormOne, unputTwo, input3) => {
+const sendFormsModals = (tag, phoneNum, userName, sendButton, popup) => {
   const errorMessage = 'Что то не так пошло...';
   const loadMessage = 'Загрузка...';
   const successMessage = 'Спасибо! Мы скоро с вами свяжемся!';
@@ -82,6 +82,8 @@ const sendFormsModals = (tag, phoneNum, userName, sendButton, addedFormOne, unpu
     form.addEventListener('click', event => {
       if (event.target.closest(sendButton)) {
         event.preventDefault();
+
+        setTimeout(() => {popup.style.display = 'none'}, 2000);
 
         form.appendChild(statusMessage);
         statusMessage.textContent = loadMessage;
