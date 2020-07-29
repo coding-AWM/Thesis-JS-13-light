@@ -9,6 +9,7 @@ const calculatorNextStep = (accordeonNumber) => {
 	}	
 
 	accordeonBlock.addEventListener('click', e => {
+		event.preventDefault();
 		let target = e.target;
 		target = target.closest('.construct-btn')
 

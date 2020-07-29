@@ -4,6 +4,7 @@ const accordeon = (accordeonNumber) => {
 	const accordeonContent = accordeonBlock.querySelectorAll('.panel-collapse');
 
 	const toggleAccordeonContent = index => {
+		event.preventDefault();
 		for (let i = 0; i < accordeonContent.length; i++) {
 			if (index === i) {
 				accordeonContent[i].style.display = 'block';
@@ -14,6 +15,7 @@ const accordeon = (accordeonNumber) => {
 	};
 
 	accordeonBlock.addEventListener('click', event => {
+		event.preventDefault();
 		let target = event.target;
 		target = target.closest('.panel-default'); // если не нашел, то идёт выше и ищет у родителя.
 		
